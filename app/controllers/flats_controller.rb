@@ -12,7 +12,12 @@ class FlatsController < ApplicationController
   end
 
   def search
-    @flats = Flat.where("name LIKE ?", '%params[]%')
+    if params[:query].present?
+      sql_query = "name LIKE :query OR description LIKE :query OR address LIKE :query"
+      @flats = Flat.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @flats = Flat.all
+    end
   end
 
   def create

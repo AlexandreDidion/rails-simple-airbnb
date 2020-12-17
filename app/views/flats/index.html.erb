@@ -22,7 +22,11 @@
 
 <%= link_to "Add flat", new_flat_path, class: "btn btn-primary" %>
 
-<%= form_with url: search_flats_path, method: :get do |f| %>
-  <%= f.text_field :query %>
-  <%= f.submit "Search Flats" %>
+<%= form_tag search_flats_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a flat"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>

@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-text"><%= @flat.name %></h3>
+        <p class="card-text"><%= @flat.address %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-text">Book this place</h3>
+        <a href="#" class="btn btn-success" role="button" aria-pressed="true">Book</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-text">A bit more about this flat...</h3>
+        <p class="card-text"><%= @flat.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h3 class="card-text">Details</h3>
+        <p class="card-text"><%= @flat.number_of_guests%> <i class="fas fa-users"></i></p>
+        <p class="card-text"><%= @flat.price_per_night %> <i class="fas fa-euro-sign"></i></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -5,6 +5,8 @@ ruby '2.6.6'
 
 gem 'autoprefixer-rails'
 
+gem 'faker'
+
 gem 'font-awesome-sass', '~> 5.6.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'

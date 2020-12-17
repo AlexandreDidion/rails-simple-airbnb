@@ -1,0 +1,28 @@
+<h1>All our Flats</h1>
+
+
+<div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=<%= flat.picture_url %> alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-text"><%= flat.name %></h3>
+          <p class="card-text"><%= flat.address %></p>
+          <p class="card-text"><%= flat.number_of_guests%> <i class="fas fa-users"></i></p>
+          <p class="card-text"><%= flat.price_per_night %> <i class="fas fa-euro-sign"></i></p>
+          <%= link_to "See more", flat_path(flat) %>
+          <%= link_to "Edit", edit_flat_path(flat) %>
+          <%= link_to "Remove", flat_path(flat), method: :delete, data: { confirm: "Are you  sure?" } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Add flat", new_flat_path, class: "btn btn-primary" %>
+
+<%= form_with url: search_flats_path, method: :get do |f| %>
+  <%= f.text_field :query %>
+  <%= f.submit "Search Flats" %>
+<% end %>

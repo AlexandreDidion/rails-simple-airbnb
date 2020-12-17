@@ -14,7 +14,19 @@
   <body>
     <nav class="navbar navbar-light bg-light">
       <span class="navbar-brand mb-0 h1"><%= link_to "SimpleAirbnb", flats_path %></span>
+      <div class="d-inline-flex">
+        <%= form_tag search_flats_path, method: :get, class:"form-inline" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a flat"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+        <%= link_to "Add flat", new_flat_path, class: "btn btn-primary ml-2" %>
+      </div>
     </nav>
+
     <div class="container">
       <%= yield %>
     </div>
